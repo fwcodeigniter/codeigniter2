@@ -8,8 +8,11 @@
         </div><!--/breadcrums-->
         <div class="review-payment">
             <h2>Thông tin đơn hàng và thanh toán</h2>
+            <h3>(Có <?php echo $total_items ?> sản phẩm)</h3>
+            <?php if ($total_items > 0): ?>
         </div>
 
+         <form action="<?php echo base_url('cart/update'); ?>" method = post>
         <div class="table-responsive cart_info">
             <table class="table table-condensed">
                 <thead>
@@ -23,6 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                     
                     <?php $total_amount = 0; ?>
                     <?php foreach ($carts as $rows): ?>
                         <?php $total_amount += $rows['subtotal']; ?>
@@ -51,8 +55,10 @@
                             </td>
                         </tr>
                     <?php endforeach; ?> 
+                        
                 </tbody>
             </table>
+            
         </div>
         <div class="shopper-informations">
             <div class="row">
@@ -97,6 +103,10 @@
                     </div>
                 </div>
 </form> 
+                <?php else: ?>
+    <h4>Không có sản phẩm nào trong giỏ hàng</h4>
+      <a class="btn btn-default update" href="<?php echo $base_url; ?>">Tiếp tục mua sắm </a>
+<?php endif; ?>
             </div>
         </div>
 
