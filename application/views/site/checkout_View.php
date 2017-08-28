@@ -7,12 +7,10 @@
             </ol>
         </div><!--/breadcrums-->
         <div class="review-payment">
-            <h2>Thông tin đơn hàng và thanh toán</h2>
-            <h3>(Có <?php echo $total_items ?> sản phẩm)</h3>
             <?php if ($total_items > 0): ?>
+            <h2>Thông tin đơn hàng và thanh toán (Có <?php echo $total_items ?> sản phẩm) </h2>
         </div>
-
-         <form action="<?php echo base_url('cart/update'); ?>" method = post>
+        <form action="<?php echo base_url('cart/update'); ?>" method = post>
         <div class="table-responsive cart_info">
             <table class="table table-condensed">
                 <thead>
@@ -41,9 +39,7 @@
                             </td>
                             <td class="cart_quantity">
                                 <div class="cart_quantity_button">
-
                                     <input class="cart_quantity_input" type="text" name="qty_<?php echo $rows['id']; ?>" value="<?php echo $rows['qty']; ?>" autocomplete="off" size="2">
-
                                 </div>
                             </td>
                             <td class="cart_total">
@@ -54,17 +50,15 @@
                             </td>
                         </tr>
                     <?php endforeach; ?> 
-                        
                 </tbody>
             </table>
-            
-        </div>
+          </div>
+        </form>
         <div class="shopper-informations">
             <div class="row">
 <form method="post" action="<?php echo base_url('cart/checkout') ?>">  
                 <div class="col-sm-8">
                     <div class="bill-to">
-
                         <div class="form-one">
                             <p>Thông tin khách hàng</p>
                             <input type="hidden" name="txtId" value="<?php echo isset($user['id']) ? $user['id'] : ''; ?>"/>
@@ -76,14 +70,11 @@
                         </div>
                         <div class="form-two">
                             <p> Phương thức thanh toán </p>
-
                             <select name="txtPayment">
                                 <option value="Tiền mặt">-- Thanh toán khi nhận hàng --</option>
                                 <option value="online">-- Thanh toán online --</option>
                             </select>
-
-                           
-                        </div>
+                          </div>
                     </div>
                 </div>
                 <div class="col-sm-4"	>
