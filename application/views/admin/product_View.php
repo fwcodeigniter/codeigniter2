@@ -28,7 +28,7 @@
                                             <div class="col-xs-5">
                                                 <div class="row">
                                                     <label class="col-xs-2 control-label">Giá: </label> 
-                                                    <div class="col-xs-8"><input class="form-control hlineheight" onchange="format_curency(this)" type="text" name="txtPrice" value="0" pattern="+[0-9]"></div>
+                                                    <div class="col-xs-8"><input class="form-control hlineheight" type="text" name="txtPrice" value="0" pattern="+[0-9]"></div>
                                                 </div>
                                             </div>									
                                             <div class="col-xs-7">
@@ -212,7 +212,7 @@ foreach ($product as $key => $value):
                                                                         ?>
                                                                     </select></div> <!-- END thương hiệu -->
                                                             </div>
-                                                            <textarea name="txtDesc" class="form-control" rows="5" placeholder="Mô tả"></textarea>
+                                                            <textarea name="txtDesc" class="form-control" rows="5" placeholder="Mô tả"><?php echo $value->description; ?></textarea>
                                                         </div>
                                                         <div class="col-xs-3">
                                                             <img src='<?php echo $base_url . "public/images/products/" . $value->image; ?>' id="img<?php echo $num; ?>" class="img-responsive hlineheight" style="min-height: 110px" />

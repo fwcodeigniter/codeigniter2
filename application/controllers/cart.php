@@ -72,6 +72,7 @@ Class Cart extends MY_Controller {
         }
         //trường hợp chưa đăng nhập thì chuyển tới trang đăng nhập
         else {
+            $this->session->set_userdata('cart_login','1');
             redirect($this->data['base_url'] . 'admin/login');
         }
     }

@@ -45,8 +45,12 @@
 				}
 			}
 			if ($isLogin == 1) {
-				if ($this->session->userdata['activeuser']['permission']) {
-					redirect($data['base_url'].'home');
+                                $cart = $this->session->userdata('cart_login');
+                                if($cart == 1){
+                                    redirect($data['base_url'].'cart');
+                                }
+				else if ($this->session->userdata['activeuser']['permission']) {
+                                    redirect($data['base_url'].'home');
 				}
 				else
 				{

@@ -38,9 +38,9 @@
                             </td>
                             <td class="cart_quantity">
                                 <div class="cart_quantity_button">
-
+                                    <form method="POST" action="<?php echo $base_url; ?>cart/update">
                                     <input class="cart_quantity_input" type="text" name="qty_<?php echo $rows['id']; ?>" value="<?php echo $rows['qty']; ?>" autocomplete="off" size="2">
-
+                                    </form>
                                 </div>
                             </td>
                             <td class="cart_total">
