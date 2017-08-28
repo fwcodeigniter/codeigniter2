@@ -26,7 +26,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                     
                     <?php $total_amount = 0; ?>
                     <?php foreach ($carts as $rows): ?>
                         <?php $total_amount += $rows['subtotal']; ?>
